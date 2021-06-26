@@ -7,9 +7,31 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, MyProtocol {
+    func setResultOfBusinessLogic(valueSent: String) {
+        <#code#>
+    }
+    
 
     @IBOutlet weak var myTextField: UITextField!
+    
+    var valueSentFromSecondViewController:String?
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if let valueToDisplay = valueSentFromSecondViewController:String
+        {
+               print("Value from display = \(valueToDisplay)")
+         }
+
+
+   }
+
+
+    func setValueFromDisplay(valueSent: String)
+    {
+        self.valueSentFromDisplay = valueSent
+    }
     
     @IBAction func myButtonTapped(_ sender: Any) {
         // Check if value from myTextField is not empty
