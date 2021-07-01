@@ -9,7 +9,9 @@ import UIKit
 
 class ViewController: UIViewController, MyProtocol {
     func setResultOfBusinessLogic(valueSent: String) {
-        <#code#>
+        if (valueSent != nil) {
+               print("Value from bus = \(valueSent)")
+         }
     }
     
 
@@ -19,8 +21,9 @@ class ViewController: UIViewController, MyProtocol {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if let valueToDisplay = valueSentFromSecondViewController:String
-        {
+        let valueToDisplay = valueSentFromSecondViewController
+        
+        if (valueToDisplay != nil) {
                print("Value from display = \(valueToDisplay)")
          }
 
@@ -30,7 +33,7 @@ class ViewController: UIViewController, MyProtocol {
 
     func setValueFromDisplay(valueSent: String)
     {
-        self.valueSentFromDisplay = valueSent
+        self.valueSentFromSecondViewController = valueSent
     }
     
     @IBAction func myButtonTapped(_ sender: Any) {
@@ -45,7 +48,7 @@ class ViewController: UIViewController, MyProtocol {
            
        // Set "Hello World" as a value to myStringValue
        secondViewController.myStringValue = myTextField.text
-           
+       secondViewController.delegate = self
        // Take user to SecondViewController
        self.navigationController?.pushViewController(secondViewController, animated: true)
     }

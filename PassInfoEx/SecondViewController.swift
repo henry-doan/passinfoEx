@@ -32,7 +32,10 @@ class SecondViewController: UIViewController {
         let lastName = "Smith"
         let fullName = firstName + " " + lastName
      
-        delegate?.setResultOfBusinessLogic(fullName)
+        if let del = delegate {
+            del.setResultOfBusinessLogic(valueSent: fullName)
+        }
+
     }
 
     override func didReceiveMemoryWarning() {
